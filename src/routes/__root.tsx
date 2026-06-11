@@ -11,6 +11,9 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { SiteHeader } from "../components/SiteHeader";
+import { SiteFooter } from "../components/SiteFooter";
+import { BUSINESS } from "../lib/business";
 
 function NotFoundComponent() {
   return (
@@ -77,19 +80,47 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Plumbing & Beyond — Licensed Plumber in San Bruno, CA" },
+      { name: "description", content: "Licensed local plumbers serving San Bruno, Daly City and the SF Peninsula. Drain cleaning, water heaters, leak repair, 24/7 emergency service. Call 650-588-0414." },
+      { property: "og:site_name", content: "Plumbing & Beyond" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Plumber",
+          name: BUSINESS.name,
+          telephone: BUSINESS.phone,
+          email: BUSINESS.email,
+          priceRange: "$$",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: BUSINESS.address.street,
+            addressLocality: BUSINESS.address.city,
+            addressRegion: BUSINESS.address.region,
+            postalCode: BUSINESS.address.postal,
+            addressCountry: BUSINESS.address.country,
+          },
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: BUSINESS.geo.lat,
+            longitude: BUSINESS.geo.lng,
+          },
+          areaServed: BUSINESS.areaServed.map((n) => ({ "@type": "City", name: n })),
+          openingHoursSpecification: [
+            { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday"], opens: "07:00", closes: "19:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "08:00", closes: "17:00" },
+          ],
+        }),
       },
     ],
   }),
@@ -118,8 +149,20 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+      >
+        Skip to main content
+      </a>
+      <div className="flex min-h-dvh flex-col bg-background text-foreground">
+        <SiteHeader />
+        <main id="main-content" className="flex-1">
+          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+          <Outlet />
+        </main>
+        <SiteFooter />
+      </div>
     </QueryClientProvider>
   );
 }
