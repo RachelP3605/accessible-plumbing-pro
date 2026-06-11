@@ -213,7 +213,7 @@ export const Route = createFileRoute("/services/$slug")({
 });
 
 function ServiceDetail() {
-  const { detail } = Route.useLoaderData();
+  const { detail } = Route.useLoaderData() as { slug: ServiceSlug; detail: Detail };
   const related = SERVICES.filter((s) => s.title !== detail.title).slice(0, 3);
 
   return (
