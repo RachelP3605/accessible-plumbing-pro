@@ -2,8 +2,6 @@ export const BUSINESS = {
   name: "Plumbing & Beyond",
   phone: "650-588-0414",
   phoneHref: "tel:+16505880414",
-  email: "info@plumbingbeyond.com", // TODO: confirm with owner
-  emailHref: "mailto:info@plumbingbeyond.com",
   address: {
     street: "309 San Bruno Ave E",
     city: "San Bruno",

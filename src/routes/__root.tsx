@@ -101,7 +101,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@type": "Plumber",
           name: BUSINESS.name,
           telephone: BUSINESS.phone,
-          email: BUSINESS.email,
           priceRange: "$$",
           address: {
             "@type": "PostalAddress",
