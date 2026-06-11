@@ -25,11 +25,6 @@ export function SiteFooter() {
               {BUSINESS.phone}
             </a>
           </p>
-          <p className="text-sm">
-            <a className="underline underline-offset-4 hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded" href={BUSINESS.emailHref}>
-              {BUSINESS.email}
-            </a>
-          </p>
         </div>
 
         <div>
