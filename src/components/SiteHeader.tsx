@@ -18,11 +18,36 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
         <Link
           to="/"
-          className="flex items-center gap-2 rounded-md px-1 py-1 text-lg font-bold text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          className="group flex items-center gap-2.5 rounded-md px-1 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           aria-label={`${BUSINESS.name} — Home`}
         >
-          <span aria-hidden className="inline-block size-8 rounded-md bg-primary text-primary-foreground grid place-items-center text-sm font-bold">P&amp;B</span>
-          <span>{BUSINESS.name}</span>
+          <span
+            aria-hidden
+            className="relative inline-flex size-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-sm ring-1 ring-primary/20"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="size-5"
+            >
+              {/* wrench */}
+              <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.3 2.3-2.1-2.1 2.3-2.2z" />
+              {/* droplet accent */}
+              <path d="M19 14c-1.5 1.8-2 3-2 4a2 2 0 1 0 4 0c0-1-.5-2.2-2-4z" fill="currentColor" stroke="none" opacity="0.9" />
+            </svg>
+          </span>
+          <span className="flex flex-col leading-tight">
+            <span className="text-base font-extrabold tracking-tight text-foreground">
+              Plumbing <span className="text-primary">&amp;</span> Beyond
+            </span>
+            <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+              Licensed Plumbers
+            </span>
+          </span>
         </Link>
 
         <nav aria-label="Primary" className="hidden md:block">
