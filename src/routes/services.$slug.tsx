@@ -137,7 +137,7 @@ export const Route = createFileRoute("/services/$slug")({
   beforeLoad: ({ params }) => {
     if (!(params.slug in DETAILS)) throw notFound();
   },
-  loader: ({ params }) => {
+  loader: ({ params }): { slug: ServiceSlug; detail: Detail } => {
     const slug = params.slug as ServiceSlug;
     return { slug, detail: DETAILS[slug] };
   },
