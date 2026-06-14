@@ -1,14 +1,15 @@
 export const BUSINESS = {
-  name: "TJ Plumbing and Heating",
-  phone: "(415) 480-7055",
-  phoneHref: "tel:+14154807055",
+  name: "Plumbing & Beyond",
+  phone: "650-588-0414",
+  phoneHref: "tel:+16505880414",
   address: {
-    street: "634 San Mateo Ave #4",
+    street: "309 San Bruno Ave E",
     city: "San Bruno",
     region: "CA",
     postal: "94066",
     country: "US",
   },
+  // TODO: confirm hours with owner
   hours: [
     { day: "Monday – Friday", time: "7:00 AM – 7:00 PM" },
     { day: "Saturday", time: "8:00 AM – 5:00 PM" },
@@ -17,8 +18,8 @@ export const BUSINESS = {
   emergency: "24/7 Emergency Service Available",
   areaServed: [
     "San Bruno",
-    "South San Francisco",
     "Daly City",
+    "South San Francisco",
     "Millbrae",
     "Burlingame",
     "San Mateo",
@@ -27,7 +28,8 @@ export const BUSINESS = {
     "Colma",
   ],
   geo: { lat: 37.6305, lng: -122.4111 },
-  license: "CA Licensed & Insured",
+  // TODO: replace with real CA contractor license number
+  license: "CA Lic. # TODO",
 };
 
 export const SERVICES = [
@@ -39,22 +41,12 @@ export const SERVICES = [
   {
     slug: "water-heater-repair",
     title: "Water Heater Repair & Installation",
-    short: "Tank and tankless water heater repair, replacement, and installation — backed by 40+ years experience and a 1-year parts & labor warranty.",
+    short: "Tank and tankless water heater repair, replacement, and installation.",
   },
   {
-    slug: "heating-service",
-    title: "Heating Service",
-    short: "Same-day heating repairs and installations for residential and commercial customers.",
-  },
-  {
-    slug: "air-conditioning",
-    title: "Air Conditioning Service",
-    short: "AC repair and installation at affordable prices, no matter the job size.",
-  },
-  {
-    slug: "gas-line-repair",
-    title: "Gas Line Repair",
-    short: "Fast, safe gas line assessment and repair with available financing options.",
+    slug: "leak-detection-repair",
+    title: "Leak Detection & Repair",
+    short: "Pinpoint hidden leaks before they cause costly damage.",
   },
   {
     slug: "emergency-plumbing",
@@ -70,6 +62,11 @@ export const SERVICES = [
     slug: "sewer-line-repair",
     title: "Sewer Line Repair",
     short: "Camera inspection, trenchless options, and full sewer line replacement.",
+  },
+  {
+    slug: "repiping",
+    title: "Whole-Home Repiping",
+    short: "Replace old galvanized or failing pipes with modern copper or PEX.",
   },
   {
     slug: "garbage-disposal",
