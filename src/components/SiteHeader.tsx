@@ -42,7 +42,7 @@ export function SiteHeader() {
           </span>
           <span className="flex flex-col leading-tight">
             <span className="text-base font-extrabold tracking-tight text-foreground">
-              Plumbing <span className="text-primary">&amp;</span> Beyond
+              {BUSINESS.name}
             </span>
             <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
               Licensed Plumbers

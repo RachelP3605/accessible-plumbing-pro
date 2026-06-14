@@ -9,7 +9,7 @@ export function SiteFooter() {
         <div>
           <p className="text-lg font-bold">{BUSINESS.name}</p>
           <p className="mt-2 text-sm opacity-90">
-            Licensed local plumbers serving San Bruno, Daly City and the San Francisco Peninsula.
+            Licensed plumbing and heating service serving San Bruno and the San Francisco Peninsula. Charges by the job, not by the hour.
           </p>
           <p className="mt-3 text-xs opacity-80">{BUSINESS.license}</p>
         </div>
