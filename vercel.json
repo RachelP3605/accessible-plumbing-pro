@@ -1,8 +1,11 @@
 {
   "buildCommand": "bun run build",
-  "outputDirectory": "dist/client",
+  "outputDirectory": ".output/public",
   "installCommand": "bun install",
   "framework": null,
+  "env": {
+    "NITRO_PRESET": "static"
+  },
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]
