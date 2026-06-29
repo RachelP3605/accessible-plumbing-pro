@@ -1,12 +1,8 @@
 {
   "buildCommand": "bun run build",
-  "outputDirectory": ".output/public",
   "installCommand": "bun install",
   "framework": null,
   "env": {
-    "NITRO_PRESET": "static"
-  },
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
+    "NITRO_PRESET": "vercel"
+  }
 }
