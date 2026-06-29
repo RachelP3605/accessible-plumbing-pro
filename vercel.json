@@ -4,8 +4,5 @@
   "framework": null,
   "env": {
     "NITRO_PRESET": "vercel"
-  },
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
+  }
 }
